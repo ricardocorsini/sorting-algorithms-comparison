@@ -27,17 +27,21 @@ def bar_chart(df, name, n):
     
     fig.update_layout(
         title=f'Experimento com Array de tamanho {n}',
-        xaxis_tickfont_size=14,
+        title_font_size=30,
+        xaxis_tickfont_size=24,
         yaxis=dict(
             title='Tempo de processamento (ms)',
-            titlefont_size=16,
-            tickfont_size=14,
+            titlefont_size=28,
+            tickfont_size=24,
         ),
         legend=dict(
             x=0,
             y=1.0,
             bgcolor='rgba(255, 255, 255, 0)',
-            bordercolor='rgba(255, 255, 255, 0)'
+            bordercolor='rgba(255, 255, 255, 0)',
+            font=dict(
+                size=18
+            )
         ),
         barmode='group',
         bargap=0.15, 
