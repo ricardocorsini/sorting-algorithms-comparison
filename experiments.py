@@ -1,11 +1,12 @@
 from sortingScripts import Sorting
 from input_generator import InputGen
+from Charts import bar_chart
 
 import pandas as pd
 from timeit import timeit
 
 
-def experiment(n):
+def experiment(n, nameChart):
 
     #Definição das entradas
 
@@ -131,7 +132,10 @@ def experiment(n):
 
     df = pd.DataFrame(dict) * 1000
 
+    bar_chart(df, nameChart, n)
+
     return df
 
-print(experiment(10000))
+
+print(experiment(100, 'Olar'))
 
