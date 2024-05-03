@@ -13,6 +13,22 @@ def experiment(n):
     descending = InputGen().descending_order(n)
     partially = InputGen().partially_sorted(n, 50)
 
+    #Insertion sort
+
+    insertion_random = timeit(lambda: Sorting().insertion_sort(totRandom), number=10) / 10
+    insertion_partially = timeit(lambda: Sorting().insertion_sort(partially), number=10) / 10
+    insertion_descending = timeit(lambda: Sorting().insertion_sort(descending), number=10) / 10
+
+    media_insertion = (insertion_random + insertion_partially + insertion_descending) / 3
+
+    insertion_resumeTime = [insertion_random, insertion_partially, insertion_descending, media_insertion]
+
+    #Recriando as entradas
+
+    totRandom = InputGen().totally_random(n)
+    descending = InputGen().descending_order(n)
+    partially = InputGen().partially_sorted(n, 50)
+
     #Bubble sort
 
     bubble_random = timeit(lambda: Sorting().bubble_sort(totRandom), number=10) / 10
@@ -22,6 +38,12 @@ def experiment(n):
     media_bubble = (bubble_random + bubble_partially + bubble_descending) / 3
 
     bubble_resumeTime = [bubble_random, bubble_partially, bubble_descending, media_bubble]
+
+    #Recriando as entradas
+
+    totRandom = InputGen().totally_random(n)
+    descending = InputGen().descending_order(n)
+    partially = InputGen().partially_sorted(n, 50)
 
     #Heap sort
 
@@ -33,15 +55,11 @@ def experiment(n):
 
     heap_resumeTime = [heap_random, heap_partially, heap_descending, media_heap]
 
-    #Insertion sort
+    #Recriando as entradas
 
-    insertion_random = timeit(lambda: Sorting().insertion_sort(totRandom), number=10) / 10
-    insertion_partially = timeit(lambda: Sorting().insertion_sort(partially), number=10) / 10
-    insertion_descending = timeit(lambda: Sorting().insertion_sort(descending), number=10) / 10
-
-    media_insertion = (insertion_random + insertion_partially + insertion_descending) / 3
-
-    insertion_resumeTime = [insertion_random, insertion_partially, insertion_descending, media_insertion]
+    totRandom = InputGen().totally_random(n)
+    descending = InputGen().descending_order(n)
+    partially = InputGen().partially_sorted(n, 50)    
 
     #Quick sort
 
@@ -53,6 +71,12 @@ def experiment(n):
 
     quick_resumeTime = [quick_random, quick_partially, quick_descending, media_quick]
 
+    #Recriando as entradas
+
+    totRandom = InputGen().totally_random(n)
+    descending = InputGen().descending_order(n)
+    partially = InputGen().partially_sorted(n, 50)
+
     #Merge sort
 
     merge_random = timeit(lambda: Sorting().merge_sort(totRandom), number=10) / 10
@@ -63,6 +87,12 @@ def experiment(n):
 
     merge_resumeTime = [merge_random, merge_partially, merge_descending, media_merge]
 
+    #Recriando as entradas
+
+    totRandom = InputGen().totally_random(n)
+    descending = InputGen().descending_order(n)
+    partially = InputGen().partially_sorted(n, 50)
+
     #Radix sort
 
     radix_random = timeit(lambda: Sorting().radix_sort(totRandom), number=10) / 10
@@ -72,6 +102,12 @@ def experiment(n):
     media_radix = (radix_random + radix_partially + radix_descending) / 3
 
     radix_resumeTime = [radix_random, radix_partially, radix_descending, media_radix]
+
+    #Recriando as entradas
+
+    totRandom = InputGen().totally_random(n)
+    descending = InputGen().descending_order(n)
+    partially = InputGen().partially_sorted(n, 50)
 
     #Selection sort
 
@@ -93,20 +129,9 @@ def experiment(n):
         'Selection Sort': selection_resumeTime
     }
 
-    print('Teste de comprovação com size 15')
-    print()
-    print('Listas geradas:')
-    print(InputGen().totally_random(15), f'Tamanho do array: {len(InputGen().totally_random(15))}')
-    print(InputGen().descending_order(15), f'Tamanho do array: {len(InputGen().descending_order(15))}')
-    print(InputGen().partially_sorted(15, 50), f'Tamanho do array: {len(InputGen().partially_sorted(15, 50))}')
-    print('')
-    print('Listas ordenadas Insertion Sort:')
-    print(Sorting().insertion_sort(InputGen().totally_random(15)))
-    print(Sorting().insertion_sort(InputGen().descending_order(15)))
-    print(Sorting().insertion_sort(InputGen().partially_sorted(15, 50)))
-
     df = pd.DataFrame(dict) * 1000
 
     return df
 
-print(experiment(2000))
+print(experiment(10000))
+
