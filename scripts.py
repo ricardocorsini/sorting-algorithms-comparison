@@ -6,7 +6,6 @@ class Sorting:
 
         pass
 
-
     def insertion_sort(self, arr):
 
         for i in range(1, len(arr)):
@@ -201,6 +200,3 @@ class Sorting:
             exp *= 10
 
         return arr
-
-
-print(Sorting().radix_sort([3, 8, 1, 10, 100, 2, 0, 4]))

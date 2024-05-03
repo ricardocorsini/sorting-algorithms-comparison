@@ -10,8 +10,17 @@
 
 - **Merge Sort**: Divide o array em duas metades, ordena cada metade recursivamente e depois mescla as duas metades ordenadas de volta em uma única lista ordenada.
 
-- **Quick Sort**: Escolhe um elemento como pivô e particiona os demais elementos em dois subconjuntos, os que são menores que o pivô e os que são maiores, para então ordenar os subconjuntos.
+- **Quick Sort**: Escolhe um elemento como pivô (mediana entre o primeiro, o meio e o último elemento do segmento do array que está sendo considerado) e particiona os demais elementos em dois subconjuntos, os que são menores que o pivô e os que são maiores, para então ordenar os subconjuntos.
 
 - **Heap Sort**: Transforma a lista em um heap binário, de modo que o maior elemento seja movido para a base do heap. O elemento é então removido do heap e colocado na posição correta na lista.
 
 - **Radix Sort**: Processa cada dígito dos números, da unidade até o dígito mais significativo, usando algum outro algoritmo de ordenação estável ou um sistema de filas.
+
+## Métodos para criação dos inputs 
+
+- **totally_random(n)**: Gera uma lista aleatória com n números
+
+- **descending_order(n)**: Gera uma lista com n valores ordenados de forma decrescente
+
+- **partially_sorted(n, disorder_percentage)**: Gera uma lista parcialmente ordenada. A porcentagem de valores desordenados é o parâmetro disorder_percentage, que vai de 0 a 100
+
