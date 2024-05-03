@@ -131,11 +131,17 @@ def experiment(n, nameChart):
     }
 
     df = pd.DataFrame(dict) * 1000
+    df_round = df.round(3)
 
-    bar_chart(df, nameChart, n)
+    df_round.index = ['Random', 'Partially (.5)', 'Descending', 'Mean']
 
-    return df
+    print(df_round)
+
+    bar_chart(df_round, nameChart, n)
+    latex_table = df_round.to_latex(index=True, caption='legenda da tebela', label='tab:legenda da tabela', float_format="{:0.3f}".format)
+
+    return latex_table
 
 
-print(experiment(100, 'Olar'))
+
 
